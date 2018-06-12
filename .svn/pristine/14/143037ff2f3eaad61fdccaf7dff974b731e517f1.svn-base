@@ -1,0 +1,9 @@
+<template>
+  <div class="header">
+    <div class="layui-container">
+      <div class="layui-row nav-header">
+        <div class="layui-col-xs9 layui-col-sm3 layui-col-md3">
+          <a href="/index" class="logo animated flipInX">
+            <i class="fa fa-graduation-cap"></i>&nbsp;彬码俑的记事簿</a> <!---->
+        </div> <div class="layui-col-xs3 layui-col-sm-offset2 layui-col-sm7 layui-hide-md layui-hide-lg nav-btn"><a href="javascript:void(0);" id="side-nav"><i class="fa fa-navicon"></i></a></div> <div class="layui-col-md-offset2 layui-col-md7 layui-hide layui-show-lg-inline-block layui-show-md-inline-block nav-btn"><a href="/index" class=""><i class="layui-icon"></i> 主页</a> <a href="/note" class="active"><i class="layui-icon"></i> 笔记</a> <a href="/profile" class=""><i class="layui-icon"></i> 关于</a> <a href="/search" target="_blank" class=""><i class="layui-icon"></i> 搜索</a> <a href="https://github.com/miyakowork" target="_blank"><i class="fa fa-code" style="font-size: 16px;"></i> 代码</a></div> <ul class="layui-nav layui-nav-tree layui-nav-side"><li class="layui-nav-item"><a href="/index" class=""><i class="layui-icon"></i> 主页</a></li> <li class="layui-nav-item"><a href="/note" class="layui-this"><i class="layui-icon"></i> 笔记</a></li> <li class="layui-nav-item"><a href="/profile" class=""><i class="layui-icon"></i> 关于</a></li> <li class="layui-nav-item"><a href="/search" class=""><i class="layui-icon"></i> 搜索</a></li> <li class="layui-nav-item"><a href="https://github.com/miyakowork" target="_blank"><i class="fa fa-code" style="font-size: 15px;"></i> 代码</a></li><span class="layui-nav-bar"></span></ul></div></div></div>
+</template>
