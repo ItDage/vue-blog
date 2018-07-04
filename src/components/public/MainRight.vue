@@ -1,9 +1,9 @@
 <template>
     <div>
 
-       <div class="page-header">
-        <h1>Panels</h1>
-      </div>
+       <!--<div class="page-header">-->
+        <!--<h1>Panels</h1>-->
+      <!--</div>-->
 
       <div class="panel panel-default">
             <div class="panel-heading">

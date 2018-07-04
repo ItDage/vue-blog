@@ -32,7 +32,7 @@ export default {
   computed: {
     nowDate: function () {
       var now = new Date()
-     // setTimeout(this, 1000)
+
       return now.toLocaleTimeString()
     }
   }
