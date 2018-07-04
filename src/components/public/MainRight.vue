@@ -7,15 +7,20 @@
 
       <div class="panel panel-default">
             <div class="panel-heading">
-              <h3 class="panel-title">Panel title</h3>
+              <h3 class="panel-title">热门文章</h3>
             </div>
             <div class="panel-body">
-              Panel content
+              <ul>
+                <li>1. Java基础</li>
+                <li>2. Java进阶</li>
+                <li>3. JavaWeb</li>
+                <li>4. Java框架</li>
+              </ul>
             </div>
           </div>
           <div class="panel panel-primary">
             <div class="panel-heading">
-              <h3 class="panel-title">Panel title</h3>
+              <h3 class="panel-title">网站公告</h3>
             </div>
             <div class="panel-body">
               Panel content
