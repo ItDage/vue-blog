@@ -1,6 +1,8 @@
 <template>
-  <ul id="LAY_demo1" class="flow-default">
-    <div>
+  <div class="row">
+    <div class="col-md-8">
+      <ul id="LAY_demo1" class="flow-default">
+        <div>
     <span id="articleList" v-for="item in items" v-bind:key="item.id">
       <div class="row">
         <div class="col-md-12">
@@ -11,8 +13,8 @@
             </div>
             <div>
               <el-row>
-                <el-col :xs="24" :sm="16" :md="16" :lg="16"><p style="text-indent:35px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">{{item.content}}</p></el-col>
-                <el-col :xs="0" :sm="8" :md="8" :lg="8" id="articleImage"><img src="../../../static/image/wenyi.jpeg"
+                <el-col :xs="24" :sm="16" :md="16" :lg="16"><p class="resolveOverflow"><span v-html="item.content">{{item.content}}</span></p></el-col>
+                <el-col :xs="0" :sm="8" :md="8" :lg="8" id="articleImage"><img src="/static/image/wenyi.jpeg"
                                                                                width="250" height="100"/></el-col>
               </el-row>
             </div>
@@ -28,7 +30,7 @@
                 <div class="hidden-xs hidden-md hidden-sm col-md-4">
                   <i class="el-icon-view">(88)</i>
                   &nbsp;&nbsp;&nbsp;
-                  <i class="el-icon-time">2018-06-02 15:09</i>
+                  <i class="el-icon-time">{{item.publishDate}}</i>
                 </div>
             </div>
           </el-card>
@@ -36,8 +38,14 @@
       </div>
         <br>
     </span>
+        </div>
+      </ul>
     </div>
-  </ul>
+    <div class="col-md-4">
+      <MainRight></MainRight>
+    </div>
+  </div>
+
 </template>
 
 <style>
@@ -47,16 +55,26 @@
   /*display: none;*/
   /*}*/
   /*}*/
+  /*解决css溢出问题*/
+  .resolveOverflow{
+    text-indent:35px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+    overflow: hidden;
+  }
 </style>
 
 <script src="./static/layui/layui.js?t=1527693307625"></script>
 <script>
+  import MainRight from '../public/MainRight'
   export default {
     data() {
       return {
         items: []
       }
     },
+    components: {MainRight},
     mounted() {
       var that = this;
       layui.use('flow', function () {
@@ -65,7 +83,7 @@
         flow.load({
           elem: '#LAY_demo1' //流加载容器
           // , scrollElem: '#LAY_demo1' //滚动条所在元素，一般不用填，此处只是演示需要。
-          ,isAuto: true
+          , isAuto: true
           , done: function (page, next) { //执行下一页的回调
             //模拟数据插入
             console.log(page)
@@ -74,15 +92,15 @@
               var count = 0;
               that.$http.get(that.url + "article/get?page=" + page).then(response => {
                 count = response.data.data2;
+                console.log(response.data.data)
                 next(lis.join(''), page < count); //假设总页数为 10
                 response.data.data.forEach(function (e) {
-                  lis.push('<li>'+e.title +'</li>')
+                  lis.push('<li>' + e.title + '</li>')
                   that.items.push(e);
                 })
               }, response => {
                 // eroor
               })
-              console.log(count)
               //执行下一页渲染，第二参数为：满足“加载更多”的条件，即后面仍有分页
               //pages为Ajax返回的总页数，只有当前页小于总页数的情况下，才会继续出现加载更多
 

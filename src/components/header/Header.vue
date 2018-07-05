@@ -21,7 +21,7 @@
               <router-link to="/about">分类</router-link>
             </li>
             <li>
-              <router-link to="/contact">时间线</router-link>
+              <router-link to="/timeLine">时间线</router-link>
             </li>
             <li>
               <router-link to="/contact">图片</router-link>
